@@ -1,0 +1,192 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<html>
+  <head style="padding-top: 10px">
+    <title>{% block title %}Si2Chip Technologies Pvt Ltd : Chip design company in Banalore{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% render_block "css" %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Starts here-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="../static/si2chip.css" rel="stylesheet" />
+     <link href="../static/base_style.css" rel="stylesheet" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!--css ends here-->
+    <!--Google fonts starts here-->
+    <link href='http://fonts.googleapis.com/css?family=Karla:700' rel='stylesheet' type='text/css'> <!--google font for top menu-->
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> <!--google font for content-->
+    <!--Google fonts ends here-->
+<style>
+  .silogo{
+    padding-top:3%;
+    padding-left:1.5%;
+    padding-bottom:5%;
+
+}
+
+.sitopmenu{
+    padding-top:3.5%;
+
+}
+
+a {
+    color: #333333;
+    text-decoration:none;
+    font-family: 'Karla', sans-serif;
+}
+body{
+  background-color:#eeeeee;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment:fixed;
+  font-size: 13px;
+
+}
+
+a:hover, a:focus {
+    color: #3a3538;
+    text-decoration: none;
+    border-bottom:solid;
+    border-bottom-color:#ed3338;
+    border-bottom-width:3px;
+}
+
+.thumbnail{
+    background-color:transparent;
+    border:none;
+}
+
+.siwellsidemainmenu{
+    background:#ed3338;
+
+}
+
+.sisidemainmenu{
+    color:#ffffff;
+}
+
+.sibiglogo{
+    width:250px;
+}
+
+.siredcontent{
+    color:#ed3338;
+}
+
+.sicontent{
+    font-family: 'Lato', sans-serif;
+
+}
+
+.siwellhome{
+    background-color:none;
+    border-left:solid;
+    border-left-color:#ed3338;
+    border-left-width:4px;
+    padding-left:2%;
+    margin-left:14%;
+
+
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+color: #111010;
+background-color: transparent;
+}
+.siwellwhite{
+    background-color:#ffffff;
+}
+
+.sifared{
+    color:#ed3338;
+}
+
+.siunique{
+    padding-top:10%;
+}
+
+.sitextred{
+    color:#ed3338;
+}
+</style>
+  </head>
+  <body >
+    {% cms_toolbar %}
+    <!--header section-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 silogo">
+                <a href="/"><img src="https://dl.dropboxusercontent.com/u/66018061/si2chip/si2chipcompanylogo.png"
+                                 class="thumbnail img-responsive"></a>
+            </div>
+
+            <div class="col-md-offset-6 sitopmenu">
+                <ul class="nav nav-pills pull-right sitopcustommenu">
+                    {% show_menu 0 1 100 100 "menu.html" %}
+
+                  {% if user.is_authenticated %}
+                  <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='glyphicon glyphicon-user'></i>
+              {{user.username }} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href='/profile'><i class='glyphicon glyphicon-user'></i> Profile</a></li>
+               <li><a href='/dashboard'><i class='glyphicon glyphicon-home'></i> Swetch To desk</a></li>
+              <li><a href='/update-password'><i class='glyphicon glyphicon-edit'></i> Reset Password</a></li>
+              <li class="divider"></li>
+              <li><a href="/logout" ><i class='glyphicon glyphicon-log-out'></i> Logout</a></li>
+            </ul>
+          </li>
+                   {% else %}
+                   <li><a href="/login" >Login</a></li>
+                   {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--header section ends here-->
+    <!--side menu & center part-->
+    <div class="container">
+            <div class="row">
+            <div class="col-md-3">
+
+                <div class="well well-sm siwellsidemainmenu" style="color:#ED3338">
+                    <a href="/about-us" class="sisidemainmenu"><i class="fa fa-plus"></i> Company</a>
+
+                </div>
+                <div class="well well-sm siwellsidemainmenu">
+                    <a href="/expertise" class="sisidemainmenu"><i class="fa fa-plus"></i> Expertise</a>
+                </div>
+                <div class="well well-sm siwellsidemainmenu">
+                    <a href="/services" class="sisidemainmenu"><i class="fa fa-plus"></i> Services</a>
+                </div>
+                <div class="well well-sm siwellsidemainmenu">
+                    <a href="/engagement-model" class="sisidemainmenu"><i class="fa fa-plus"></i> Engagement model</a>
+                </div>
+            </div>
+
+        {% block content %}
+        {% endblock content %}
+        </div>
+    <div class="container">
+        <div class="footer">
+          <br/>
+          <br/>
+            <div class="col-md-7">
+                <p>&copy; Copyright 2014. Si2chip Technologies Pvt. Ltd. All right reserved. <a
+                        href="http://www.nescode.com" target="next">| Powered by NESCODE</a></p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    {% render_block "js" %}
+  </body>
+</html>
+

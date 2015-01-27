@@ -1,0 +1,34 @@
+{% extends "si2chip-app.html" %}
+ {% load staticfiles %}
+ {% block content %}
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-offset-1 col-md-5">
+<table class="table table-bordered table-striped table-responsive">
+	<tbody class="text-info">
+		<tr>
+			<th width="25%">User Name</th>
+			<td> {{ user.username }} </td>
+		</tr>
+		<tr>
+			<th>Email Id</th>
+			<td>{{ user.email }}</td>
+		</tr>
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+

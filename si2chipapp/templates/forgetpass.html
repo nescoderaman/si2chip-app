@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+ {% load staticfiles %}
+ {% block content %}
+<form method="post" action="">
+                            {% csrf_token %}
+        <!--sign in form starts here-->
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Reset Password</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <fieldset>
+                                <div class="form-group">
+                                    <p>Please enter your email address.
+                                You will receive a link to create a new password via email.</p>
+                                                  <input type="email" id="forgot_email" name="email"
+                                                         placeholder="Your e-mail Id"class="form-control" required="" autofocus="">
+                                                  <br>
+                                                <button type="submit" class="btn btn-sm btn-primary">Send</button>
+                                    <p class="text-center">
+                                                     <br><a href="/login">Back to Login</a>
+                            </fieldset></div></div></div></div></div></form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+{% endblock %}

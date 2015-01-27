@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+{% block content %}
+
+  {% placeholder "feature" %}
+<div>
+  {% placeholder "content" %}
+   <div class="col-md-offset-4">
+                <img src="https://dl.dropboxusercontent.com/u/66018061/si2chip/si2biglogo.png" class="thumbnail img-responsive sibiglogo">
+            </div>
+        </div>
+        <!--body content-->
+        <div class="col-md-offset-4">
+            <div class="siwellhome">
+                <h3 class="sicontent">Everyone has been talking about quality design services</h3>
+                <h2 class="sicontent siredcontent">We decided to walk the talk</h2>
+                <a class="btn btn-danger" href="../services/walk_the_talk.html">Read more <i class="fa fa-long-arrow-right"></i></a>
+            </div>
+        </div>
+        <!--body content ends here-->
+    </div>
+    <!--side menu & center parts ends here-->
+</div>
+    <!--social menu-->
+    <!--social menu ends here-->
+{% endblock content %}

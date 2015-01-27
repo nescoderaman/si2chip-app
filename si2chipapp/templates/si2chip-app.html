@@ -1,0 +1,111 @@
+
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<html>
+  <head>
+    <title>{% block title %}Si2Chip Technologies Pvt Ltd : Chip design company in Banalore{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% render_block "css" %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Starts here-->
+
+
+
+       <link href="../static/si2chip-app.css" rel="stylesheet" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!--css ends here-->
+    <!--Google fonts starts here-->
+    <link href='http://fonts.googleapis.com/css?family=Karla:700' rel='stylesheet' type='text/css'> <!--google font for top menu-->
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> <!--google font for content-->
+    <!--Google fonts ends here-->
+
+
+  </head>
+
+  <body>
+    {% cms_toolbar %}
+    <!--header section-->
+   <div class="container">
+        <div class="row">
+            <div class="col-md-offset-6 sitopmenu">
+
+                <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                    <li class="dropdown logged-in" id="website-post-login"data-label="website-post-login">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class='glyphicon glyphicon-user'></i> {{ user.username }}<b class="caret"></b>
+						</a>
+				        <ul class="dropdown-menu">
+                            <li data-label="User"></li>
+                            <li data-label="My Orders">
+                                <a href = "/profile" rel="nofollow"><i
+                                        class="icon-fixed-width icon-key"></i>
+                                    <i class='glyphicon glyphicon-user'></i> Profile
+								</a>
+                            </li>
+                            <li data-label="My Orders">
+                                <a href = "/" rel="nofollow"><i
+                                        class="icon-fixed-width icon-key"></i><i
+                                        class='glyphicon glyphicon-home'></i> Swetch to Website
+								</a>
+                            </li>
+                            <li data-label="My Orders">
+                                <a href = "/update-password" rel="nofollow"><i class="icon-fixed-width icon-key"></i><i class='glyphicon glyphicon-edit'></i> Reset Password</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li data-label="Logout"><a href="/logout" rel="nofollow"></i><i class='glyphicon glyphicon-log-out'></i> Logout
+									</a></li>
+                        </ul>
+					</li>
+                        {% else %}
+                         <li class="btn-login-area"><a href="/login">SignUp/Login</a></li>
+                                    {% endif %}
+
+				</ul>
+
+            </div>
+        </div>
+    </div>
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--left nevigation bar start here-->
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="/dashboard"> <i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+              {% if request.user.is_superuser %}
+            <li><a href="/new-user"><i class="glyphicon glyphicon-user"></i> Create User</a></li>
+               {% endif %}
+
+          </ul>
+        </div>
+             <div class="col-sm-9 col-sm-offset- col-md-10 col-md-offset-2 maincol-sm-9 col-sm-offset-3 col-md-10
+             col-md-offset-2 main">
+        {% block content %}
+        {% endblock content %}
+        </div>
+          </div>
+
+    <div class="container">
+        <div class="footer">
+          <br/>
+          <br/>
+            <div class="col-md-7 col-md-offset-3">
+                <p>&copy; Copyright 2014. Si2chip Technologies Pvt. Ltd. All right reserved. <a
+                        href="http://www.nescode.com" target="next">| Powered by NESCODE</a></p>
+
+            </div>
+
+        </div>
+    </div>
+ </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    {% render_block "js" %}
+  </body>
+</html>
+

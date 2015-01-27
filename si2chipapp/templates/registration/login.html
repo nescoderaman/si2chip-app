@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+ {% load staticfiles %}
+ {% block content %}
+<!--sign in form tag starts here-->
+    <form method="post" action="" role="form">{% csrf_token %}
+<!--Container starts here for login page-->
+<div class="container">
+            <!--Row Start here-->
+            <div class="row">
+            <!--pannel start here-->
+                <div class="col-md-3 col-md-offset-2">
+
+                        <div class="panel-body">
+                                <!--Fieldset; start here-->
+                            <fieldset>
+                            <h3>Login</h3>
+                                <div class="form-group">
+                                    {% if form.errors %}
+                                         <p>Username and password didn't match.</p>
+                                             {% endif %}
+                                   <div class="form-cell"><input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/></div>
+                                </div>
+                                <div class="form-group">
+
+                                  <div><input type="password" class="form-control" placeholder="Password" id="id_password" name="password" type="password" required /></div>
+                                </div>
+                                <div>
+                                   <button type="submit" class="btn btn-primary"><i
+                                           class='glyphicon glyphicon-lock'></i> Login</button>
+                                              <input type="hidden" name="next" value="/dashboard"  /></div>
+                                <p class="text-center">
+                                <br>
+                                    <a href="/update-password">Forgot Password?</a>
+                                </p>
+                            </fieldset>
+                             <!--Fieldset; end here-->
+                        </div>
+                    <!--pannel; Body end here-->
+                    </div>
+
+                </div>
+            <!--pannel start here-->
+            </div>
+            <!--Row end here-->
+        </div>
+<!-- /container -->
+
+
+
+
+    <!--Java script calling tag  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    </form>
+ {% endblock %}

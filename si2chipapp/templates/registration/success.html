@@ -1,0 +1,37 @@
+{% extends "si2chip-app.html" %}
+ {% load staticfiles %}
+ {% block content %}
+
+  <!--container starts here-->
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                      <!--pannel starts here-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Thank you for creating new user.</h3>
+                        </div>
+                         <!--pannel body starts here-->
+                        <div class="panel-body">
+
+                            <fieldset>
+                                <div class="alert alert-success" role="alert">
+                                   New user created successfully.
+                                </div>
+                                <a href="/dashboard" class="btn btn-xs btn-primary">Back</a>
+                            </fieldset>
+
+                        </div>
+                         <!--pannel body end here-->
+                    </div>
+                     <!--pannel end here-->
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+
+
+<!--Java script calling tag  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ {% endblock %}
